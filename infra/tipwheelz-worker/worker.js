@@ -160,6 +160,48 @@ async function verifyWebhook(request, secret, raw) {
   const expected = new Uint8Array(await crypto.subtle.sign('HMAC', key, encoder.encode(`${timestamp}.${raw}`)));
   return signatures.some(s => constantEqual(s, expected));
 }
+
+async function deliverMonthlyWelcome(env, sessionId) {
+  if (env.DEPLOYMENT_MODE !== 'live' || !env.MACK_MONTHLY_WEBHOOK_URL) return;
+  const target = new URL(env.MACK_MONTHLY_WEBHOOK_URL);
+  if (target.origin !== 'https://app.macknified.com' || !target.pathname.startsWith('/api/webhooks/flow/')) throw new Error('Invalid welcome webhook configuration');
+  const row = await env.DB.prepare(`SELECT stripe_subscription_id, donor_email, donor_name
+    FROM payment_ledger WHERE stripe_session_id=? AND flow='monthly'
+    AND payment_status='paid' AND subscription_status='active'
+    AND stripe_subscription_id IS NOT NULL`).bind(sessionId).first();
+  if (!row || !row.donor_email) return;
+  await env.DB.prepare(`INSERT OR IGNORE INTO mack_monthly_welcomes
+    (subscription_id, session_id, status) VALUES (?, ?, 'pending')`)
+    .bind(row.stripe_subscription_id, sessionId).run();
+  const claim = await env.DB.prepare(`UPDATE mack_monthly_welcomes SET
+    status='sending', lease_until=unixepoch()+60, attempts=attempts+1, updated_at=CURRENT_TIMESTAMP
+    WHERE subscription_id=? AND status!='accepted'
+    AND (status='pending' OR lease_until<unixepoch()) RETURNING subscription_id`)
+    .bind(row.stripe_subscription_id).first();
+  if (!claim) {
+    const current = await env.DB.prepare('SELECT status FROM mack_monthly_welcomes WHERE subscription_id=?')
+      .bind(row.stripe_subscription_id).first();
+    if (current?.status === 'accepted') return;
+    throw new Error('Monthly welcome delivery in progress');
+  }
+  try {
+    const response = await fetch(target.href, {
+      method:'POST', headers:{'Content-Type':'application/json'}, redirect:'error',
+      signal:AbortSignal.timeout(8000),
+      body:JSON.stringify({contactEmail:row.donor_email,contactName:row.donor_name || '',
+        channel:'email',data:{contactEmail:row.donor_email}})
+    });
+    if (!response.ok) { await response.body?.cancel(); throw new Error('Monthly welcome not accepted'); }
+    await response.body?.cancel();
+    await env.DB.prepare(`UPDATE mack_monthly_welcomes SET status='accepted', lease_until=NULL,
+      updated_at=CURRENT_TIMESTAMP WHERE subscription_id=?`).bind(row.stripe_subscription_id).run();
+  } catch (error) {
+    await env.DB.prepare(`UPDATE mack_monthly_welcomes SET status='pending', lease_until=NULL,
+      updated_at=CURRENT_TIMESTAMP WHERE subscription_id=?`).bind(row.stripe_subscription_id).run();
+    throw new Error('Monthly welcome delivery failed');
+  }
+}
+
 async function webhook(request, env) {
   if (!env.STRIPE_WEBHOOK_SECRET) return json({error: 'Unavailable'}, 503);
   const raw = await request.text();
@@ -190,6 +232,10 @@ async function webhook(request, env) {
       WHERE stripe_session_id=? AND stripe_payment_intent_id=?
       AND EXISTS (SELECT 1 FROM stripe_refund_state WHERE payment_intent_id=?)`)
       .bind(obj.payment_intent, obj.id, obj.payment_intent, obj.payment_intent).run();
+    if (paid && obj.mode === 'subscription' && choices[meta.tipwheelz_tier][0] === 'monthly'
+        && meta.tipwheelz_flow === 'monthly' && typeof obj.subscription === 'string') {
+      await deliverMonthlyWelcome(env, obj.id);
+    }
   } else if (event.type === 'invoice.paid' || event.type === 'invoice.payment_failed') {
     const sub = typeof obj.subscription === 'string' ? obj.subscription : obj.parent?.subscription_details?.subscription;
     if (sub) await env.DB.prepare(`UPDATE payment_ledger
