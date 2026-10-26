@@ -11,7 +11,7 @@ const SANDBOX_PRICES = {
   monthly_15: ['monthly', 'price_1UMJJfAmw5QsPEyVH22fcxs6', 1500],
   monthly_30: ['monthly', 'price_1UMJJlAmw5QsPEyVqLHRWcaq', 3000],
 };
-const TIER_AMOUNTS = {tip_5:500, tip_10:1000, tip_25:2500, tip_50:5000, tip_100:10000, monthly_3:300, monthly_7:700, monthly_15:1500, monthly_30:3000};
+const TIER_AMOUNTS = {tip_5:500, tip_10:1000, tip_15:1500, tip_25:2500, tip_50:5000, tip_100:10000, monthly_3:300, monthly_7:700, monthly_15:1500, monthly_30:3000};
 function origins(env) { return new Set((env.ALLOWED_ORIGINS || SANDBOX_ORIGINS.join(',')).split(',').map(s => s.trim()).filter(Boolean)); }
 function prices(env) {
   if (env.DEPLOYMENT_MODE !== 'live') return SANDBOX_PRICES;
