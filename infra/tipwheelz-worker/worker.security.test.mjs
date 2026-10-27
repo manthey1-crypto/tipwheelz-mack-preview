@@ -15,6 +15,7 @@ after(() => { globalThis.fetch = originalFetch; });
 function setup() {
   const db = new DatabaseSync(':memory:');
   db.exec(readFileSync(new URL('./schema.sql', import.meta.url), 'utf8'));
+  db.exec(readFileSync(new URL('./monthly-welcome-migration.sql', import.meta.url), 'utf8'));
   db.exec(`CREATE TABLE wall_entries (
     id TEXT PRIMARY KEY, payment_reference TEXT NOT NULL UNIQUE, display_name TEXT NOT NULL,
     message TEXT, tier TEXT, consent_recorded_at TEXT NOT NULL,
@@ -84,6 +85,43 @@ test('invalid webhook signatures, stale timestamps and cross-mode events fail',a
   assert.equal((await webhook(env,'evt_3','checkout.session.completed',checkoutObject(),{timestamp:Math.floor(Date.now()/1000)-400})).status,400);
   assert.equal((await webhook(env,'evt_4','checkout.session.completed',checkoutObject(),{livemode:true})).status,400);
   assert.equal(db.prepare('SELECT COUNT(*) AS n FROM payment_ledger').get().n,0);
+  db.close();
+});
+
+test('signed live monthly checkout welcomes once; retries, renewals and tips stay isolated',async()=>{
+  const {db,env}=setup();
+  env.DEPLOYMENT_MODE='live';
+  env.MACK_MONTHLY_WEBHOOK_URL='https://app.macknified.com/api/webhooks/flow/test/private';
+  let calls=0, fail=false;
+  globalThis.fetch=async(url,options)=>{
+    assert.equal(String(url),env.MACK_MONTHLY_WEBHOOK_URL);
+    const payload=JSON.parse(options.body);
+    assert.equal(payload.contactEmail,'security-test@example.invalid');
+    assert.equal(payload.data.contactEmail,payload.contactEmail);
+    assert.equal('message' in payload,false);
+    calls++;
+    return new Response(null,{status:fail?503:200});
+  };
+  const object={...checkoutObject(),mode:'subscription'};
+  const send=(id,type,obj)=>webhook(env,id,type,obj,{livemode:true});
+  assert.equal((await send('evt_live_initial','checkout.session.completed',object)).status,200);
+  assert.equal(calls,1);
+  assert.equal(db.prepare('SELECT status FROM mack_monthly_welcomes').get().status,'accepted');
+  await send('evt_live_initial','checkout.session.completed',object);
+  await send('evt_live_delayed','checkout.session.async_payment_succeeded',object);
+  await send('evt_live_renewal','invoice.paid',{subscription});
+  await send('evt_live_tip','checkout.session.completed',{...checkoutObject({flow:'one_time',tier:'tip_15'}),id:'cs_live_tip',mode:'payment'});
+  await send('evt_live_unpaid','checkout.session.completed',{...object,id:'cs_live_unpaid',subscription:'sub_unpaid',payment_status:'unpaid'});
+  assert.equal(calls,1);
+  fail=true;
+  const retry={...object,id:'cs_live_retry',subscription:'sub_retry'};
+  assert.equal((await send('evt_live_retry','checkout.session.completed',retry)).status,500);
+  assert.equal(db.prepare("SELECT status FROM mack_monthly_welcomes WHERE subscription_id='sub_retry'").get().status,'pending');
+  assert.equal(db.prepare("SELECT id FROM stripe_events WHERE id='evt_live_retry'").get(),undefined);
+  fail=false;
+  assert.equal((await send('evt_live_retry','checkout.session.completed',retry)).status,200);
+  assert.equal(db.prepare("SELECT status FROM mack_monthly_welcomes WHERE subscription_id='sub_retry'").get().status,'accepted');
+  assert.equal(calls,3);
   db.close();
 });
 
