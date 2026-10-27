@@ -1,1 +1,98 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Wall of Thanks | TipWheelz</title><meta name="description" content="The people who support Mr Wheelz. Names appear only with permission and verified support."><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"><style>:root{--bg:#111418;--panel:#1b2025;--line:#30373c;--teal:#4fbba4;--yellow:#fff275;--text:#f3f6f7;--muted:#a4adb1}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 80% 10%,rgba(79,187,164,.14),transparent 35%),var(--bg);color:var(--text);font:16px/1.6 Inter,Arial,sans-serif;min-height:100vh}a{color:inherit}header,main,footer{width:min(1040px,calc(100% - 40px));margin:auto}.top{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:25px 0;border-bottom:1px solid var(--line)}.brand{font:2rem "Bebas Neue",Impact,sans-serif;letter-spacing:.05em;text-decoration:none}.brand span{color:var(--teal)}.back{text-decoration:none;color:var(--teal);font-weight:700}.back:hover{text-decoration:underline}.eyebrow{text-transform:uppercase;letter-spacing:.18em;color:var(--yellow);font-size:.78rem;font-weight:800}main{padding:82px 0 120px;min-height:72vh}h1{font:clamp(4rem,9vw,8rem)/.95 "Bebas Neue",Impact,sans-serif;letter-spacing:.035em;margin:.1em 0 .24em}h1 span{color:var(--teal)}.intro{max-width:690px;color:var(--muted);font-size:1.08rem}.names{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px;margin:45px 0}.name{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:24px;min-height:95px;display:flex;align-items:center;font-size:1.25rem;font-weight:800;overflow-wrap:anywhere}.name:before{content:"✦";color:var(--yellow);margin-right:15px}.empty{border:1px solid var(--line);background:var(--panel);border-radius:12px;padding:30px;color:var(--muted);margin:40px 0}.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 20px;min-height:48px;background:var(--teal);border-radius:8px;color:#111418;text-decoration:none;font-weight:800}footer{padding:22px 0 35px;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}.skip-link{position:fixed;z-index:10000;left:16px;top:12px;padding:10px 14px;border-radius:7px;background:#fff275;color:#111418;font-weight:800;text-decoration:none;transform:translateY(-180%)}.skip-link:focus{transform:none}:focus-visible{outline:3px solid #fff275;outline-offset:3px}button,.btn,[role="tab"],summary{min-height:44px}main [id],section[id]{scroll-margin-top:96px}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}</style></head><body><a class="skip-link" href="#main-content">Skip to main content</a><header class="top" role="banner"><a class="brand" id="home-logo" href="/" aria-label="TipWheelz home">TIP<span>WHEELZ</span></a><a class="back" id="home-back" href="/">← Back to TipWheelz</a></header><main id="main-content" tabindex="-1"><p class="eyebrow">The people behind the punchlines</p><h1>Wall of <span>thanks.</span></h1><p class="intro">A thank-you to supporters who chose to share their names. Every name here follows a verified payment and an opt-in. Only names are public.</p><div id="wall-content" role="status" aria-live="polite" aria-atomic="true" aria-busy="true"><div class="empty">Loading names…</div></div><a class="btn" id="home-support" href="/">Support Mr Wheelz</a></main><footer>TipWheelz · Comedy, advocacy, access. Questions? <a href="mailto:info@rollflow.net">info@rollflow.net</a> · <a href="https://manthey1-crypto.github.io/tipwheelz-mack-preview/privacy/">Privacy Policy</a> · <a href="https://manthey1-crypto.github.io/tipwheelz-mack-preview/terms/">Terms of Service</a></footer><script>(function(){const home=location.hostname==='app.macknified.com'?'https://app.macknified.com/p/mzBT5wp':'../';for(const id of ['home-logo','home-back','home-support'])document.getElementById(id).href=home+(id==='home-support'?'#support':'');const target=document.getElementById('wall-content');fetch('https://tipwheelz-live.tipwheelz-rollflow.workers.dev/wall').then(r=>{if(!r.ok)throw Error('Unavailable');return r.json()}).then(data=>{target.replaceChildren();target.setAttribute('aria-busy','false');if(!Array.isArray(data.entries)||!data.entries.length){const empty=document.createElement('div');empty.className='empty';empty.textContent='No names here yet. Supporters can opt in at checkout.';target.append(empty);return}const grid=document.createElement('div');grid.className='names';for(const entry of data.entries){const card=document.createElement('div');card.className='name';card.textContent=entry.name||'Anonymous supporter';grid.append(card)}target.append(grid)}).catch(()=>{target.setAttribute('aria-busy','false');target.innerHTML='<div class="empty">The wall is unavailable right now. Please try again later.</div>'})})();</script></body></html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Wall of Thanks | TipWheelz</title><meta name="description" content="The people who support Mr Wheelz. Names appear only with permission and verified support."><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"><style>:root{--bg:#111418;--panel:#1b2025;--line:#30373c;--teal:#4fbba4;--yellow:#fff275;--text:#f3f6f7;--muted:#a4adb1}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 80% 10%,rgba(79,187,164,.14),transparent 35%),var(--bg);color:var(--text);font:16px/1.6 Inter,Arial,sans-serif;min-height:100vh}a{color:inherit}header,main,footer{width:min(1040px,calc(100% - 40px));margin:auto}.top{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:25px 0;border-bottom:1px solid var(--line)}.brand{font:2rem "Bebas Neue",Impact,sans-serif;letter-spacing:.05em;text-decoration:none}.brand span{color:var(--teal)}.back{text-decoration:none;color:var(--teal);font-weight:700}.back:hover{text-decoration:underline}.eyebrow{text-transform:uppercase;letter-spacing:.18em;color:var(--yellow);font-size:.78rem;font-weight:800}main{padding:82px 0 120px;min-height:72vh}h1{font:clamp(4rem,9vw,8rem)/.95 "Bebas Neue",Impact,sans-serif;letter-spacing:.035em;margin:.1em 0 .24em}h1 span{color:var(--teal)}.intro{max-width:690px;color:var(--muted);font-size:1.08rem}.names{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px;margin:45px 0}.name{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:24px;min-height:95px;display:flex;align-items:center;font-size:1.25rem;font-weight:800;overflow-wrap:anywhere}.name:before{content:"✦";color:var(--yellow);margin-right:15px}.empty{border:1px solid var(--line);background:var(--panel);border-radius:12px;padding:30px;color:var(--muted);margin:40px 0}.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 20px;min-height:48px;background:var(--teal);border-radius:8px;color:#111418;text-decoration:none;font-weight:800}footer{padding:22px 0 35px;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}.skip-link{position:fixed;z-index:10000;left:16px;top:12px;padding:10px 14px;border-radius:7px;background:#fff275;color:#111418;font-weight:800;text-decoration:none;transform:translateY(-180%)}.skip-link:focus{transform:none}:focus-visible{outline:3px solid #fff275;outline-offset:3px}button,.btn,[role="tab"],summary{min-height:44px}main [id],section[id]{scroll-margin-top:96px}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}</style></head><body><a class="skip-link" href="#main-content">Skip to main content</a><header class="top" role="banner"><a class="brand" id="home-logo" href="/" aria-label="TipWheelz home">TIP<span>WHEELZ</span></a><a class="back" id="home-back" href="/">← Back to TipWheelz</a></header><main id="main-content" tabindex="-1"><p class="eyebrow">The people behind the punchlines</p><h1>Wall of <span>thanks.</span></h1><p class="intro">A thank-you to supporters who chose to share their names. Every name here follows a verified payment and an opt-in. Only names are public.</p><div id="wall-content" role="status" aria-live="polite" aria-atomic="true" aria-busy="true"><div class="empty">Loading names…</div></div><a class="btn" id="home-support" href="/">Support Mr Wheelz</a></main><footer>TipWheelz · Comedy, advocacy, access. Questions? <a href="mailto:info@rollflow.net">info@rollflow.net</a> · <a href="https://manthey1-crypto.github.io/tipwheelz-mack-preview/privacy/">Privacy Policy</a> · <a href="https://manthey1-crypto.github.io/tipwheelz-mack-preview/terms/">Terms of Service</a></footer><script>(function(){const home=location.hostname==='app.macknified.com'?'https://app.macknified.com/p/mzBT5wp':'../';for(const id of ['home-logo','home-back','home-support'])document.getElementById(id).href=home+(id==='home-support'?'#support':'');const target=document.getElementById('wall-content');fetch('https://tipwheelz-live.tipwheelz-rollflow.workers.dev/wall').then(r=>{if(!r.ok)throw Error('Unavailable');return r.json()}).then(data=>{target.replaceChildren();target.setAttribute('aria-busy','false');if(!Array.isArray(data.entries)||!data.entries.length){const empty=document.createElement('div');empty.className='empty';empty.textContent='No names here yet. Supporters can opt in at checkout.';target.append(empty);return}const grid=document.createElement('div');grid.className='names';for(const entry of data.entries){const card=document.createElement('div');card.className='name';card.textContent=entry.name||'Anonymous supporter';grid.append(card)}target.append(grid)}).catch(()=>{target.setAttribute('aria-busy','false');target.innerHTML='<div class="empty">The wall is unavailable right now. Please try again later.</div>'})})();</script><!-- TW-PRIVACY-START --><style data-tipwheelz-privacy>#tw-cookie-notice,#tw-cookie-settings,.tw-cookie-footer{font-family:Inter,Arial,sans-serif;font-size:16px;line-height:1.5;color:#f1f5f4;box-sizing:border-box}
+#tw-cookie-notice[hidden],#tw-cookie-gpc[hidden]{display:none!important}
+#tw-cookie-notice{position:fixed;inset:auto 16px 16px auto;z-index:9999;width:min(540px,calc(100% - 32px));max-height:50dvh;overflow:auto;padding:20px;background:#1b2126;border:1px solid #4fbba4;border-radius:12px;box-shadow:0 8px 32px #0008}
+#tw-cookie-notice h2,#tw-cookie-settings h2{font:700 1.15rem/1.3 Inter,Arial,sans-serif;letter-spacing:normal;text-transform:none;margin:0 0 10px;color:#f1f5f4}
+#tw-cookie-notice p,#tw-cookie-settings p{font-size:.9rem;margin:0 0 12px;color:#c2ceca}
+#tw-cookie-notice a,#tw-cookie-settings a{color:#79dbc5;text-decoration:underline;text-underline-offset:3px}
+.tw-cookie-actions{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0}
+.tw-cookie-actions button,.tw-cookie-footer button{font:600 .9rem/1.4 Inter,Arial,sans-serif;min-height:44px;border:1px solid #79dbc5;border-radius:7px;background:#1b2126;color:#f1f5f4;padding:10px 14px;cursor:pointer}
+.tw-cookie-actions button:hover,.tw-cookie-footer button:hover{background:#293731}
+.tw-cookie-actions button:focus-visible,.tw-cookie-footer button:focus-visible,#tw-cookie-settings a:focus-visible,#tw-cookie-notice a:focus-visible{outline:3px solid #fff275;outline-offset:3px}
+#tw-cookie-settings{width:min(580px,calc(100% - 24px));max-height:calc(100dvh - 24px);overflow:auto;padding:24px;background:#1b2126;border:1px solid #4fbba4;border-radius:12px;margin:auto}
+#tw-cookie-settings::backdrop{background:#000b}
+#tw-cookie-settings dt{font-weight:700;margin-top:18px;color:#f1f5f4}
+#tw-cookie-settings dt span{display:block;font-size:.85rem;font-weight:500;color:#79dbc5}
+#tw-cookie-settings dd{margin:6px 0 0;font-size:.9rem;color:#c2ceca}
+#tw-cookie-saved:empty{display:none}
+.tw-cookie-footer{padding:12px 20px 24px;margin:0;background:#111418;text-align:center}
+.tw-cookie-footer button{background:transparent;text-decoration:underline;border-color:transparent}
+#tw-cookie-footer-status{display:block;font-size:.8rem;color:#c2ceca}
+@media(max-width:480px){#tw-cookie-notice{inset:auto 12px 12px;width:calc(100% - 24px);padding:16px}.tw-cookie-actions button{flex:1 1 130px}#tw-cookie-settings{padding:20px}}
+</style><section id="tw-cookie-notice" aria-labelledby="tw-cookie-title" hidden>
+  <h2 id="tw-cookie-title">Cookies &amp; your privacy</h2>
+  <p>This site uses necessary storage for your privacy choice and secure checkout. No optional analytics or advertising cookies are enabled.</p>
+  <p id="tw-cookie-gpc" hidden>Global Privacy Control detected. Your opt-out is honored.</p>
+  <div class="tw-cookie-actions"><button type="button" data-tw-reject>Reject optional cookies</button><button type="button" data-tw-settings>Settings</button></div>
+  <a href="https://tipwheelz.com/privacy/#cookies">Read the cookie notice</a>
+</section>
+<dialog id="tw-cookie-settings" aria-labelledby="tw-cookie-settings-title" aria-describedby="tw-cookie-settings-intro">
+  <h2 id="tw-cookie-settings-title">Cookie &amp; privacy settings</h2>
+  <p id="tw-cookie-settings-intro">Optional tracking is off. You can use the site and support Mr Wheelz without accepting optional cookies.</p>
+  <dl><dt>Necessary storage <span>Always active</span></dt><dd>Remembers your privacy choice. Stripe may use cookies and similar technologies for payment security when you start checkout. These payment functions cannot be turned off here.</dd><dt>Analytics cookies <span>Not used</span></dt><dd>No optional analytics scripts are installed in this site's pages.</dd><dt>Advertising cookies <span>Not used</span></dt><dd>No advertising pixels or cross-site advertising trackers are installed in this site's pages.</dd></dl>
+  <p id="tw-cookie-signal"></p><p id="tw-cookie-saved" role="status" aria-live="polite"></p>
+  <p>External fonts and images still make requests to their providers. Links to Stripe billing and social or shopping sites open services with their own privacy settings.</p>
+  <p><a href="https://tipwheelz.com/privacy/#cookies">Privacy and cookie notice</a> · <a href="mailto:info@rollflow.net">Contact us</a></p>
+  <div class="tw-cookie-actions"><button type="button" data-tw-reject>Reject optional cookies</button><button type="button" data-tw-close>Close</button></div>
+</dialog>
+<p class="tw-cookie-footer"><button type="button" data-tw-settings>Cookie &amp; privacy settings</button><span id="tw-cookie-footer-status"></span></p>
+<script data-tipwheelz-privacy>/* TipWheelz currently installs no optional analytics or advertising scripts.
+   This records a local opt-out, never an opt-in. New integrations require a
+   separate audit and consent gate; this code is not an arbitrary-script blocker. */
+(() => {
+  'use strict';
+  const key='tipwheelz_privacy_v1', lifetime=180*24*60*60*1000;
+  const notice=document.getElementById('tw-cookie-notice');
+  const dialog=document.getElementById('tw-cookie-settings');
+  if(!notice || !dialog) return;
+  let lastFocus=null;
+  const gpc=()=>navigator.globalPrivacyControl===true;
+  function readChoice(){
+    try {
+      const value=JSON.parse(localStorage.getItem(key));
+      return value?.version===1 && value.analytics===false && value.advertising===false &&
+        typeof value.savedAt==='number' && value.savedAt<=Date.now() && Date.now()-value.savedAt<lifetime ? value : null;
+    } catch {return null;}
+  }
+  function update(){
+    notice.hidden=Boolean(readChoice()) || gpc();
+    document.getElementById('tw-cookie-gpc').hidden=!gpc();
+    document.getElementById('tw-cookie-signal').textContent=gpc()
+      ? 'Global Privacy Control is on. Your opt-out is honored; optional tracking remains off.'
+      : 'Optional analytics and advertising remain off, including before you make a choice.';
+    document.getElementById('tw-cookie-footer-status').textContent=gpc()
+      ? 'Global Privacy Control honored · Optional tracking off'
+      : readChoice() ? 'Optional cookies rejected' : '';
+  }
+  function reject(){
+    let saved=false;
+    try {
+      localStorage.setItem(key,JSON.stringify({version:1,analytics:false,advertising:false,saleOrSharing:false,savedAt:Date.now()}));
+      saved=true;
+    } catch {}
+    notice.hidden=true;
+    document.getElementById('tw-cookie-saved').textContent=saved
+      ? 'Your choice is saved for 180 days in this browser. Optional tracking is off.'
+      : 'Optional tracking is off. Your browser prevented saving the choice, so this notice may appear again.';
+    document.getElementById('tw-cookie-footer-status').textContent=gpc()
+      ? 'Global Privacy Control honored · Optional tracking off'
+      : saved ? 'Optional cookies rejected' : 'Optional tracking off · Choice could not be saved';
+    window.dispatchEvent(new CustomEvent('tipwheelz:privacychange',{detail:{analytics:false,advertising:false,saleOrSharing:false,globalPrivacyControl:gpc()}}));
+    if(!dialog.open) document.querySelector('.tw-cookie-footer [data-tw-settings]').focus({preventScroll:true});
+  }
+  document.querySelectorAll('[data-tw-reject]').forEach(button=>button.addEventListener('click',reject));
+  document.querySelectorAll('[data-tw-settings]').forEach(button=>button.addEventListener('click',()=>{
+    lastFocus=button;
+    update();
+    document.getElementById('tw-cookie-saved').textContent='';
+    if(!dialog.open) dialog.showModal();
+  }));
+  document.querySelector('[data-tw-close]').addEventListener('click',()=>dialog.close());
+  dialog.addEventListener('close',()=>{
+    const target=lastFocus?.isConnected && !lastFocus.closest('[hidden]') ? lastFocus : document.querySelector('.tw-cookie-footer [data-tw-settings]');
+    target.focus({preventScroll:true});
+  });
+  window.addEventListener('storage',event=>{if(event.key===key || event.key===null)update();});
+  window.addEventListener('pageshow',update);
+  update();
+})();
+</script><!-- TW-PRIVACY-END --></body></html>

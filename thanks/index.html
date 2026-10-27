@@ -4,4 +4,101 @@ const label=document.getElementById('status-label'),heading=document.getElementB
 async function status(){if(!id){label.textContent='Payment not verified';heading.innerHTML='Check your<br><span>receipt.</span>';copy.textContent='We could not verify a payment from this link. Check your Stripe receipt or contact info@rollflow.net.';return}
 try{const r=await fetch('https://tipwheelz-live.tipwheelz-rollflow.workers.dev/api/tipwheelz/status?session_id='+encodeURIComponent(id));const data=await r.json();if(!r.ok)throw Error('status');if(data.status==='paid'){label.textContent='Payment confirmed';heading.innerHTML='You fuel the jokes.<br><span>Thank you.</span>';copy.textContent='Your support is confirmed. Stripe will email your receipt.';return}if(data.status==='failed'||data.status==='refunded'){label.textContent='Payment not confirmed';heading.innerHTML='Let’s try<br><span>again.</span>';copy.textContent='The payment was not confirmed. Return to TipWheelz or contact info@rollflow.net.';return}label.textContent='Confirmation pending';heading.innerHTML='Almost<br><span>there.</span>';copy.textContent='Stripe has not confirmed this payment yet. Check your email for a receipt. If it does not arrive, contact info@rollflow.net.'}catch{label.textContent='Status unavailable';heading.innerHTML='Check your<br><span>receipt.</span>';copy.textContent='We could not check your payment right now. Check your Stripe receipt or email info@rollflow.net.'}}
 status();let checks=0;const timer=setInterval(()=>{if(label.textContent!=='Confirmation pending'||++checks>6){clearInterval(timer);return}status()},3000);
-</script></body></html>
+</script><!-- TW-PRIVACY-START --><style data-tipwheelz-privacy>#tw-cookie-notice,#tw-cookie-settings,.tw-cookie-footer{font-family:Inter,Arial,sans-serif;font-size:16px;line-height:1.5;color:#f1f5f4;box-sizing:border-box}
+#tw-cookie-notice[hidden],#tw-cookie-gpc[hidden]{display:none!important}
+#tw-cookie-notice{position:fixed;inset:auto 16px 16px auto;z-index:9999;width:min(540px,calc(100% - 32px));max-height:50dvh;overflow:auto;padding:20px;background:#1b2126;border:1px solid #4fbba4;border-radius:12px;box-shadow:0 8px 32px #0008}
+#tw-cookie-notice h2,#tw-cookie-settings h2{font:700 1.15rem/1.3 Inter,Arial,sans-serif;letter-spacing:normal;text-transform:none;margin:0 0 10px;color:#f1f5f4}
+#tw-cookie-notice p,#tw-cookie-settings p{font-size:.9rem;margin:0 0 12px;color:#c2ceca}
+#tw-cookie-notice a,#tw-cookie-settings a{color:#79dbc5;text-decoration:underline;text-underline-offset:3px}
+.tw-cookie-actions{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0}
+.tw-cookie-actions button,.tw-cookie-footer button{font:600 .9rem/1.4 Inter,Arial,sans-serif;min-height:44px;border:1px solid #79dbc5;border-radius:7px;background:#1b2126;color:#f1f5f4;padding:10px 14px;cursor:pointer}
+.tw-cookie-actions button:hover,.tw-cookie-footer button:hover{background:#293731}
+.tw-cookie-actions button:focus-visible,.tw-cookie-footer button:focus-visible,#tw-cookie-settings a:focus-visible,#tw-cookie-notice a:focus-visible{outline:3px solid #fff275;outline-offset:3px}
+#tw-cookie-settings{width:min(580px,calc(100% - 24px));max-height:calc(100dvh - 24px);overflow:auto;padding:24px;background:#1b2126;border:1px solid #4fbba4;border-radius:12px;margin:auto}
+#tw-cookie-settings::backdrop{background:#000b}
+#tw-cookie-settings dt{font-weight:700;margin-top:18px;color:#f1f5f4}
+#tw-cookie-settings dt span{display:block;font-size:.85rem;font-weight:500;color:#79dbc5}
+#tw-cookie-settings dd{margin:6px 0 0;font-size:.9rem;color:#c2ceca}
+#tw-cookie-saved:empty{display:none}
+.tw-cookie-footer{padding:12px 20px 24px;margin:0;background:#111418;text-align:center}
+.tw-cookie-footer button{background:transparent;text-decoration:underline;border-color:transparent}
+#tw-cookie-footer-status{display:block;font-size:.8rem;color:#c2ceca}
+@media(max-width:480px){#tw-cookie-notice{inset:auto 12px 12px;width:calc(100% - 24px);padding:16px}.tw-cookie-actions button{flex:1 1 130px}#tw-cookie-settings{padding:20px}}
+</style><section id="tw-cookie-notice" aria-labelledby="tw-cookie-title" hidden>
+  <h2 id="tw-cookie-title">Cookies &amp; your privacy</h2>
+  <p>This site uses necessary storage for your privacy choice and secure checkout. No optional analytics or advertising cookies are enabled.</p>
+  <p id="tw-cookie-gpc" hidden>Global Privacy Control detected. Your opt-out is honored.</p>
+  <div class="tw-cookie-actions"><button type="button" data-tw-reject>Reject optional cookies</button><button type="button" data-tw-settings>Settings</button></div>
+  <a href="https://tipwheelz.com/privacy/#cookies">Read the cookie notice</a>
+</section>
+<dialog id="tw-cookie-settings" aria-labelledby="tw-cookie-settings-title" aria-describedby="tw-cookie-settings-intro">
+  <h2 id="tw-cookie-settings-title">Cookie &amp; privacy settings</h2>
+  <p id="tw-cookie-settings-intro">Optional tracking is off. You can use the site and support Mr Wheelz without accepting optional cookies.</p>
+  <dl><dt>Necessary storage <span>Always active</span></dt><dd>Remembers your privacy choice. Stripe may use cookies and similar technologies for payment security when you start checkout. These payment functions cannot be turned off here.</dd><dt>Analytics cookies <span>Not used</span></dt><dd>No optional analytics scripts are installed in this site's pages.</dd><dt>Advertising cookies <span>Not used</span></dt><dd>No advertising pixels or cross-site advertising trackers are installed in this site's pages.</dd></dl>
+  <p id="tw-cookie-signal"></p><p id="tw-cookie-saved" role="status" aria-live="polite"></p>
+  <p>External fonts and images still make requests to their providers. Links to Stripe billing and social or shopping sites open services with their own privacy settings.</p>
+  <p><a href="https://tipwheelz.com/privacy/#cookies">Privacy and cookie notice</a> · <a href="mailto:info@rollflow.net">Contact us</a></p>
+  <div class="tw-cookie-actions"><button type="button" data-tw-reject>Reject optional cookies</button><button type="button" data-tw-close>Close</button></div>
+</dialog>
+<p class="tw-cookie-footer"><button type="button" data-tw-settings>Cookie &amp; privacy settings</button><span id="tw-cookie-footer-status"></span></p>
+<script data-tipwheelz-privacy>/* TipWheelz currently installs no optional analytics or advertising scripts.
+   This records a local opt-out, never an opt-in. New integrations require a
+   separate audit and consent gate; this code is not an arbitrary-script blocker. */
+(() => {
+  'use strict';
+  const key='tipwheelz_privacy_v1', lifetime=180*24*60*60*1000;
+  const notice=document.getElementById('tw-cookie-notice');
+  const dialog=document.getElementById('tw-cookie-settings');
+  if(!notice || !dialog) return;
+  let lastFocus=null;
+  const gpc=()=>navigator.globalPrivacyControl===true;
+  function readChoice(){
+    try {
+      const value=JSON.parse(localStorage.getItem(key));
+      return value?.version===1 && value.analytics===false && value.advertising===false &&
+        typeof value.savedAt==='number' && value.savedAt<=Date.now() && Date.now()-value.savedAt<lifetime ? value : null;
+    } catch {return null;}
+  }
+  function update(){
+    notice.hidden=Boolean(readChoice()) || gpc();
+    document.getElementById('tw-cookie-gpc').hidden=!gpc();
+    document.getElementById('tw-cookie-signal').textContent=gpc()
+      ? 'Global Privacy Control is on. Your opt-out is honored; optional tracking remains off.'
+      : 'Optional analytics and advertising remain off, including before you make a choice.';
+    document.getElementById('tw-cookie-footer-status').textContent=gpc()
+      ? 'Global Privacy Control honored · Optional tracking off'
+      : readChoice() ? 'Optional cookies rejected' : '';
+  }
+  function reject(){
+    let saved=false;
+    try {
+      localStorage.setItem(key,JSON.stringify({version:1,analytics:false,advertising:false,saleOrSharing:false,savedAt:Date.now()}));
+      saved=true;
+    } catch {}
+    notice.hidden=true;
+    document.getElementById('tw-cookie-saved').textContent=saved
+      ? 'Your choice is saved for 180 days in this browser. Optional tracking is off.'
+      : 'Optional tracking is off. Your browser prevented saving the choice, so this notice may appear again.';
+    document.getElementById('tw-cookie-footer-status').textContent=gpc()
+      ? 'Global Privacy Control honored · Optional tracking off'
+      : saved ? 'Optional cookies rejected' : 'Optional tracking off · Choice could not be saved';
+    window.dispatchEvent(new CustomEvent('tipwheelz:privacychange',{detail:{analytics:false,advertising:false,saleOrSharing:false,globalPrivacyControl:gpc()}}));
+    if(!dialog.open) document.querySelector('.tw-cookie-footer [data-tw-settings]').focus({preventScroll:true});
+  }
+  document.querySelectorAll('[data-tw-reject]').forEach(button=>button.addEventListener('click',reject));
+  document.querySelectorAll('[data-tw-settings]').forEach(button=>button.addEventListener('click',()=>{
+    lastFocus=button;
+    update();
+    document.getElementById('tw-cookie-saved').textContent='';
+    if(!dialog.open) dialog.showModal();
+  }));
+  document.querySelector('[data-tw-close]').addEventListener('click',()=>dialog.close());
+  dialog.addEventListener('close',()=>{
+    const target=lastFocus?.isConnected && !lastFocus.closest('[hidden]') ? lastFocus : document.querySelector('.tw-cookie-footer [data-tw-settings]');
+    target.focus({preventScroll:true});
+  });
+  window.addEventListener('storage',event=>{if(event.key===key || event.key===null)update();});
+  window.addEventListener('pageshow',update);
+  update();
+})();
+</script><!-- TW-PRIVACY-END --></body></html>
