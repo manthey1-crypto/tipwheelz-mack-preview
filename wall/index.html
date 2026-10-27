@@ -77,7 +77,8 @@
       ? 'Global Privacy Control honored · Optional tracking off'
       : saved ? 'Optional cookies rejected' : 'Optional tracking off · Choice could not be saved';
     window.dispatchEvent(new CustomEvent('tipwheelz:privacychange',{detail:{analytics:false,advertising:false,saleOrSharing:false,globalPrivacyControl:gpc()}}));
-    if(!dialog.open) document.querySelector('.tw-cookie-footer [data-tw-settings]').focus({preventScroll:true});
+    if(dialog.open) dialog.close();
+    else document.querySelector('.tw-cookie-footer [data-tw-settings]').focus({preventScroll:true});
   }
   document.querySelectorAll('[data-tw-reject]').forEach(button=>button.addEventListener('click',reject));
   document.querySelectorAll('[data-tw-settings]').forEach(button=>button.addEventListener('click',()=>{
