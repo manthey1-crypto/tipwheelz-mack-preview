@@ -16,7 +16,7 @@ function makeEnv(){
       run:async()=>{if(sql.includes('UPDATE payment_ledger'))rows.paymentStatus=args[0];return {meta:{changes:1}}}
     }}}}}
   };
-  for(const tier of ['TIP_5','TIP_10','TIP_25','TIP_50','TIP_100','MONTHLY_3','MONTHLY_7','MONTHLY_15','MONTHLY_30'])
+  for(const tier of ['TIP_5','TIP_10','TIP_15','TIP_25','TIP_50','TIP_100','MONTHLY_3','MONTHLY_7','MONTHLY_15','MONTHLY_30'])
     env['STRIPE_PRICE_'+tier]='price_TEST123';
   globalThis.fetch=async(url,options)=>{
     calls.push({url:String(url),options});
