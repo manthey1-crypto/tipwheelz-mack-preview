@@ -1,54 +1,219 @@
 {
- "products": [
-  {
-   "name": "Mr Wheelz Hoodie",
-   "price": 47.99,
-   "priceLabel": "$47.99",
-   "category": "Apparel",
-   "description": "Mr Wheelz hoodie, printed on demand by Printify.",
-   "imageUrl": "https://images.printify.com/mockup/6ac56be4588295289a064ebf/68053/99231/mr-wheelz-hoodie.jpg?camera_label=front&s=800",
-   "externalCheckoutUrl": "https://shop.tiktok.com/us/pdp/1732726864475295776",
-   "buyNowText": "Buy on TikTok Shop"
-  },
-  {
-   "name": "Mr Wheelz Mug | 11oz",
-   "price": 12.99,
-   "priceLabel": "$12.99",
-   "category": "Drinkware",
-   "description": "11oz Mr Wheelz mug, printed on demand by Printify.",
-   "imageUrl": "https://images.printify.com/mockup/6ac3d0769721b65eba054533/33719/6400/mr-wheelz-mug-11oz.jpg?camera_label=front&s=800",
-   "externalCheckoutUrl": "https://shop.tiktok.com/us/pdp/1732726750758408224",
-   "buyNowText": "Buy on TikTok Shop"
-  },
-  {
-   "name": "Wheelz Logo Mug | 11oz",
-   "price": 12.99,
-   "priceLabel": "$12.99",
-   "category": "Drinkware",
-   "description": "11oz mug with the Wheelz logo, printed on demand by Printify.",
-   "imageUrl": "https://images.printify.com/mockup/6ac3cb07e6b0fccbca039df0/33719/6400/wheelz-logo-mug-11oz.jpg?camera_label=front&s=800",
-   "externalCheckoutUrl": "https://shop.tiktok.com/us/pdp/1732726747868729376",
-   "buyNowText": "Buy on TikTok Shop"
-  },
-  {
-   "name": "OnlyWheelz Classic Dad Hat | Blue Script Logo Cap",
-   "price": 23.07,
-   "priceLabel": "$23.07",
-   "category": "Hats",
-   "description": "Classic dad hat with the blue OnlyWheelz script logo, printed on demand by Printify.",
-   "imageUrl": "https://images.printify.com/mockup/6ac4117bb9da022d150ea2e6/244931/124404/onlywheelz-classic-dad-hat-blue-script-logo-cap.jpg?camera_label=front&s=800",
-   "externalCheckoutUrl": "https://shop.tiktok.com/us/pdp/1732726743302115360",
-   "buyNowText": "Buy on TikTok Shop"
-  },
-  {
-   "name": "Mr Wheelz T-Shirt",
-   "price": 21.99,
-   "priceLabel": "From $21.99",
-   "category": "Apparel",
-   "description": "Mr Wheelz tee, printed on demand by Printify. From $21.99, up to $29.99 depending on size.",
-   "imageUrl": "https://images.printify.com/mockup/6ac56c896f33f467c403c073/38191/97992/mr-wheelz-t-shirt.jpg?camera_label=front&s=800",
-   "externalCheckoutUrl": "https://shop.tiktok.com/us/pdp/1732726852266463264",
-   "buyNowText": "Buy on TikTok Shop"
-  }
- ]
+  "updatedAt": "2026-10-31",
+  "currency": "USD",
+  "products": [
+    {
+      "name": "Mr Wheelz Hoodie",
+      "price": 47.99,
+      "priceLabel": "$47.99",
+      "category": "Apparel",
+      "description": "A relaxed-fit pullover hoodie with a kangaroo pocket. Lane Seven LS14001.",
+      "imageUrl": "https://images.printify.com/mockup/6ac56be4588295289a064ebf/68053/99231/mr-wheelz-hoodie.jpg?camera_label=front&s=800",
+      "externalCheckoutUrl": "https://shop.tiktok.com/us/pdp/1732726864475295776",
+      "buyNowText": "Buy on TikTok Shop",
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "2XL",
+        "3XL"
+      ],
+      "colors": [
+        "White",
+        "Heather Grey",
+        "Charcoal Heather",
+        "Black",
+        "Royal Blue",
+        "Navy"
+      ],
+      "variantNotes": "3XL: Black, Heather Grey, Navy and Charcoal Heather only.",
+      "status": "published",
+      "productId": "6ac56be4588295289a064ebf"
+    },
+    {
+      "name": "Mr Wheelz Mug | 11oz",
+      "price": 12.99,
+      "priceLabel": "$12.99",
+      "category": "Drinkware",
+      "description": "11oz Mr Wheelz mug, printed on demand by Printify.",
+      "imageUrl": "https://images.printify.com/mockup/6ac3d0769721b65eba054533/33719/6400/mr-wheelz-mug-11oz.jpg?camera_label=front&s=800",
+      "externalCheckoutUrl": "https://shop.tiktok.com/us/pdp/1732726750758408224",
+      "buyNowText": "Buy on TikTok Shop",
+      "sizes": [
+        "11oz"
+      ],
+      "status": "published",
+      "productId": "6ac3d0769721b65eba054533",
+      "colors": []
+    },
+    {
+      "name": "Wheelz Logo Mug | 11oz",
+      "price": 12.99,
+      "priceLabel": "$12.99",
+      "category": "Drinkware",
+      "description": "11oz mug with the Wheelz logo, printed on demand by Printify.",
+      "imageUrl": "https://images.printify.com/mockup/6ac3cb07e6b0fccbca039df0/33719/6400/wheelz-logo-mug-11oz.jpg?camera_label=front&s=800",
+      "externalCheckoutUrl": "https://shop.tiktok.com/us/pdp/1732726747868729376",
+      "buyNowText": "Buy on TikTok Shop",
+      "sizes": [
+        "11oz"
+      ],
+      "status": "published",
+      "productId": "6ac3cb07e6b0fccbca039df0",
+      "colors": []
+    },
+    {
+      "name": "OnlyWheelz Classic Dad Hat | Blue Script Logo Cap",
+      "price": 23.07,
+      "priceLabel": "$23.07",
+      "category": "Hats",
+      "description": "Classic dad hat with the blue OnlyWheelz script logo, printed on demand by Printify.",
+      "imageUrl": "https://images.printify.com/mockup/6ac4117bb9da022d150ea2e6/244931/124404/onlywheelz-classic-dad-hat-blue-script-logo-cap.jpg?camera_label=front&s=800",
+      "externalCheckoutUrl": "https://shop.tiktok.com/us/pdp/1732726743302115360",
+      "buyNowText": "Buy on TikTok Shop",
+      "sizes": [
+        "One size"
+      ],
+      "colors": [
+        "White",
+        "Maroon",
+        "Red",
+        "Stone"
+      ],
+      "status": "published",
+      "productId": "6ac4117bb9da022d150ea2e6"
+    },
+    {
+      "name": "Mr Wheelz T-Shirt",
+      "price": 21.99,
+      "priceLabel": "$21.99–$29.99",
+      "category": "Apparel",
+      "description": "Mr Wheelz graphic on a Gildan 64000 Softstyle tee. Price varies by size and color.",
+      "imageUrl": "https://images.printify.com/mockup/6ac56c896f33f467c403c073/38191/97992/mr-wheelz-t-shirt.jpg?camera_label=front&s=800",
+      "externalCheckoutUrl": "https://shop.tiktok.com/us/pdp/1732726852266463264",
+      "buyNowText": "Buy on TikTok Shop",
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "2XL",
+        "3XL"
+      ],
+      "colors": [
+        "White",
+        "Black",
+        "Navy",
+        "Azalea"
+      ],
+      "status": "published",
+      "productId": "6ac56c896f33f467c403c073"
+    },
+    {
+      "productId": "6ac56b4afd169ea5b106d800",
+      "name": "Mr Wheelz Monster Truck Sticker",
+      "category": "Stickers",
+      "sizes": [
+        "3\" × 3\""
+      ],
+      "colors": [],
+      "description": "Flaming monster truck design on a kiss-cut sticker.",
+      "status": "published",
+      "imageUrl": "https://images.printify.com/mockup/6ac56b4afd169ea5b106d800/45750/16655/flaming-monster-truck-mr-wheelz-kiss-cut-stickers-vinyl-decal.jpg?camera_label=front&s=800",
+      "price": 3.99,
+      "priceLabel": "$3.99",
+      "externalCheckoutUrl": "https://shop.tiktok.com/us/pdp/1732796378675253280"
+    },
+    {
+      "productId": "6ac56ba7b559e7ff340db313",
+      "name": "Mr Wheelz Monster Truck Tote",
+      "category": "Bags",
+      "sizes": [
+        "15\" × 16\""
+      ],
+      "colors": [
+        "Natural"
+      ],
+      "description": "A natural-color tote featuring the Mr Wheelz monster truck.",
+      "status": "coming_soon",
+      "imageUrl": "https://images.printify.com/mockup/6ac56ba7b559e7ff340db313/101409/93895/mr-wheelz-monster-truck-tote-graphic-tote-bag.jpg?camera_label=front&s=800"
+    },
+    {
+      "productId": "6ac56b5f9c86a7f5bc01571a",
+      "name": "OnlyWheelz Logo Sticker",
+      "category": "Stickers",
+      "sizes": [
+        "3\" × 3\""
+      ],
+      "colors": [],
+      "description": "Blue script and lock logo on a kiss-cut sticker.",
+      "status": "coming_soon",
+      "imageUrl": "https://images.printify.com/mockup/6ac56b5f9c86a7f5bc01571a/45750/16655/onlywheelz-logo-kiss-cut-stickers-laptop-decal-blue-script-and-lock-icon.jpg?camera_label=front&s=800"
+    },
+    {
+      "productId": "6ac56b225f472173f5032a17",
+      "name": "OnlyWheelz Logo Tote",
+      "category": "Bags",
+      "sizes": [
+        "13\" × 13\""
+      ],
+      "colors": [
+        "Black",
+        "Red",
+        "White",
+        "Beige",
+        "Navy"
+      ],
+      "description": "OnlyWheelz logo tote with five handle-color options.",
+      "status": "coming_soon",
+      "imageUrl": "https://images.printify.com/mockup/6ac56b225f472173f5032a17/103599/100877/only-wheelz-logo-tote-white-logo-bag-blue-script-handbag.jpg?camera_label=front&s=800",
+      "colorLabel": "Handle colors"
+    },
+    {
+      "productId": "6ac3ce6845a7a5dcf50c3011",
+      "name": "Stemless Wine Glass",
+      "category": "Drinkware",
+      "sizes": [
+        "11.75oz"
+      ],
+      "colors": [],
+      "description": "",
+      "status": "coming_soon",
+      "imageUrl": "https://images.printify.com/mockup/6ac3ce6845a7a5dcf50c3011/98948/88877/stemless-wine-glass-1175oz.jpg?camera_label=front&s=800",
+      "variantNotes": "Release pending; production delays may apply."
+    },
+    {
+      "productId": "6ac3ca8f9a9b79f9620fa1d1",
+      "name": "Trucker Cap",
+      "category": "Hats",
+      "sizes": [],
+      "colors": [],
+      "description": "",
+      "status": "unavailable",
+      "imageUrl": "",
+      "variantNotes": "No variants are currently available."
+    },
+    {
+      "productId": "6ac3ca4bf3025c559602b73e",
+      "name": "Unisex Softstyle T-Shirt",
+      "category": "Apparel",
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "2XL",
+        "3XL",
+        "4XL",
+        "5XL"
+      ],
+      "colors": [],
+      "description": "Gildan 64000 Softstyle tee. This listing is being prepared.",
+      "status": "coming_soon",
+      "imageUrl": "https://images.printify.com/mockup/6ac3ca4bf3025c559602b73e/38191/97992/unisex-softstyle-t-shirt.jpg?camera_label=front&s=800",
+      "variantNotes": "Release pending; production delays may apply."
+    }
+  ]
 }
