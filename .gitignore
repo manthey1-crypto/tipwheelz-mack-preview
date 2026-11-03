@@ -1,0 +1,13 @@
+# Backend source belongs in the private repository
+infra/
+workers/
+worker.js
+wrangler.toml
+wrangler.json
+wrangler.jsonc
+.env
+.env.*
+.dev.vars
+.dev.vars.*
+node_modules/
+.wrangler/

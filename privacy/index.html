@@ -1,0 +1,424 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<!-- SEO Meta Tags -->
+<title>Privacy Policy | TipWheelz</title>
+<meta name="description" content="How TipWheelz handles support payments, merchandise orders, fulfillment details, and names on the Wall of Thanks." />
+<meta property="og:title" content="Privacy Policy | TipWheelz" />
+<meta property="og:description" content="How TipWheelz handles support payments, merchandise orders, fulfillment details, and names on the Wall of Thanks." />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Privacy Policy | TipWheelz" />
+<meta name="twitter:description" content="How TipWheelz handles support payments, merchandise orders, fulfillment details, and names on the Wall of Thanks." />
+<!-- End SEO Meta Tags -->
+<script data-lp-token-hydrate>
+(function(){try{
+  var slug="lp-mut39clr-2ulug";
+  var SITEK="";
+  var SK='lp_access_'+slug;
+  var map={access_token:'lp_pw_',allowlist_access_token:'lp_al_',pin_access_token:'lp_pin_',paywall_access_token:'lp_paid_'};
+  function siteTok(){try{return SITEK?localStorage.getItem(SITEK):null;}catch(e){return null;}}
+  var u=new URL(location.href);var found=null;var changed=false;
+  var PINP=true;
+  if(!PINP){try{localStorage.removeItem('lp_pin_'+slug);if(SITEK)localStorage.removeItem(SITEK);}catch(e){}}
+  Object.keys(map).forEach(function(p){var v=u.searchParams.get(p);if(v){found=v;try{if(PINP||p!=='pin_access_token'){localStorage.setItem(map[p]+slug,v);if(SITEK&&p==='pin_access_token')localStorage.setItem(SITEK,v);}}catch(e){}if(p==='pin_access_token'){try{sessionStorage.setItem('lp_fresh_'+slug,'1');}catch(e){}}u.searchParams.delete(p);changed=true;}});
+  if(found){try{sessionStorage.setItem(SK,found);}catch(e){}}
+  else{try{if(!sessionStorage.getItem(SK)){var t=localStorage.getItem('lp_pw_'+slug)||localStorage.getItem('lp_al_'+slug)||localStorage.getItem('lp_pin_'+slug)||localStorage.getItem('lp_paid_'+slug)||siteTok();if(t)sessionStorage.setItem(SK,t);}}catch(e){}}
+  if(changed){try{history.replaceState(null,'',u.toString());}catch(e){}}
+  function getTok(){try{return sessionStorage.getItem(SK)||localStorage.getItem('lp_pw_'+slug)||localStorage.getItem('lp_al_'+slug)||localStorage.getItem('lp_pin_'+slug)||localStorage.getItem('lp_paid_'+slug)||siteTok();}catch(e){return null;}}
+  function needsToken(url,method){if(!url)return false;var s=String(url);var m=(method||'GET').toUpperCase();var isSheetWrite=(m==='POST'||m==='PATCH'||m==='PUT'||m==='DELETE')&&/\/sheet-rows(\/|$|\?)/.test(s);var isSheetRead=/\/sheet-data(\/|$|\?)/.test(s);var isLlm=/\/api\/landing-pages\/public\/[^/]+\/(llm|llm-config)(\/|$|\?)/.test(s);return isSheetWrite||isSheetRead||isLlm;}
+  if(window.fetch){var _f=window.fetch;window.fetch=function(input,init){try{var url=typeof input==='string'?input:(input&&input.url)||'';var method=(init&&init.method)||(input&&input.method)||'GET';if(needsToken(url,method)){var tok=getTok();if(tok){init=init||{};var h=new Headers(init.headers||(typeof input!=='string'?input.headers:undefined)||{});if(!h.has('X-Landing-Page-Token'))h.set('X-Landing-Page-Token',tok);init.headers=h;}}}catch(e){}return _f.call(this,input,init);};}
+  if(window.XMLHttpRequest){var _o=XMLHttpRequest.prototype.open;var _s=XMLHttpRequest.prototype.send;XMLHttpRequest.prototype.open=function(m,u){this.__lpM=m;this.__lpU=u;return _o.apply(this,arguments);};XMLHttpRequest.prototype.send=function(){try{if(needsToken(this.__lpU,this.__lpM)){var tok=getTok();if(tok)this.setRequestHeader('X-Landing-Page-Token',tok);}}catch(e){}return _s.apply(this,arguments);};}
+}catch(e){}})();
+</script>
+
+<script data-field-replace>
+(function(){
+  var params=new URLSearchParams(window.location.search);
+  var fields={};
+  var paramMap={
+    'first_name':'firstName','last_name':'lastName','full_name':'fullName',
+    'email':'email','phone':'phone','company':'company',
+    'city':'city','state':'state','country':'country'
+  };
+  var skipTags={'SCRIPT':1,'STYLE':1,'NOSCRIPT':1,'TEXTAREA':1,'CODE':1,'PRE':1};
+  var hasUrlFields=false;
+  for(var p in paramMap){
+    var v=params.get(p);
+    if(v){fields[paramMap[p]]=v;hasUrlFields=true;}
+  }
+  var contactId=params.get('contact_id');
+  function esc(s){
+    if(!s)return s;
+    var d=document.createElement('div');
+    d.appendChild(document.createTextNode(s));
+    return d.innerHTML;
+  }
+  function doReplace(data){
+    var r={};
+    r['{{full_name}}']=esc(((data.firstName||'')+' '+(data.lastName||'')).trim()||((data.fullName||data.name)||''));
+    r['{{first_name}}']=esc(data.firstName||(data.name?data.name.split(' ')[0]:'')||'');
+    r['{{last_name}}']=esc(data.lastName||(data.name&&data.name.indexOf(' ')>-1?data.name.substring(data.name.indexOf(' ')+1):'')||'');
+    r['{{email}}']=esc(data.email||'');
+    r['{{phone}}']=esc(data.phone||'');
+    r['{{company}}']=esc(data.company||'');
+    r['{{city}}']=esc(data.city||'');
+    r['{{state}}']=esc(data.state||'');
+    r['{{country}}']=esc(data.country||'');
+    r['{{date}}']=new Date().toLocaleDateString();
+    r['{{time}}']=new Date().toLocaleTimeString();
+    r['{{location}}']=[data.city,data.state,data.country].filter(Boolean).join(', ');
+    r['{{tracking_id}}']=esc(data.trackingId||'');
+    r['{{lastClickedProduct}}']=esc(data.lastClickedProduct||'');
+    r['{{lastProductClickDate}}']=esc(data.lastProductClickDate||'');
+    r['{{lastClickedProductPrice}}']=esc(data.lastClickedProductPrice||'');
+    r['{{lastClickedProductURL}}']=esc(data.lastClickedProductURL||'');
+    r['{{productsClickedCount}}']=esc(data.productsClickedCount||'0');
+    r['{{ip_address}}']=esc(data.ipAddress||'');
+    r['{{ip}}']=esc(data.ipAddress||'');
+    if(data.customFields){
+      for(var k in data.customFields){
+        r['{{'+k+'}}']=esc(String(data.customFields[k]||''));
+      }
+    }
+    params.forEach(function(v,k){
+      if(!paramMap[k]&&k!=='contact_id'&&k!=='page_id'&&k.indexOf('utm_')!==0){
+        r['{{'+k+'}}']=esc(v);
+      }
+    });
+    var hasValues=false;
+    for(var key in r){if(r[key]){hasValues=true;break;}}
+    if(!hasValues)return;
+    var walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{
+      acceptNode:function(n){
+        var p=n.parentNode;
+        if(p&&skipTags[p.nodeName])return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var node;
+    while(node=walker.nextNode()){
+      var txt=node.nodeValue;
+      if(txt&&txt.indexOf('{{')>-1){
+        var changed=txt;
+        for(var ph in r){
+          if(r[ph]&&changed.indexOf(ph)>-1){
+            changed=changed.split(ph).join(r[ph]);
+          }
+        }
+        if(changed!==txt)node.nodeValue=changed;
+      }
+    }
+    var attrs=['value','placeholder','content','alt','title'];
+    attrs.forEach(function(attr){
+      var els=document.querySelectorAll('['+attr+'*="{{"]');
+      for(var i=0;i<els.length;i++){
+        var tag=els[i].tagName;
+        if(skipTags[tag])continue;
+        var val=els[i].getAttribute(attr);
+        if(val){
+          var nv=val;
+          for(var ph in r){
+            if(r[ph]&&nv.indexOf(ph)>-1){
+              nv=nv.split(ph).join(r[ph]);
+            }
+          }
+          if(nv!==val)els[i].setAttribute(attr,nv);
+        }
+      }
+    });
+  }
+  function run(){
+    if(contactId){
+      var xhr=new XMLHttpRequest();
+      xhr.open('GET','https://app.macknified.com/api/landing/context/'+encodeURIComponent(contactId)+'?page_id=7749');
+      xhr.onload=function(){
+        if(xhr.status===200){
+          try{
+            var resp=JSON.parse(xhr.responseText);
+            if(resp.success&&resp.contact){
+              var merged=resp.contact;
+              for(var k in fields){merged[k]=fields[k];}
+              doReplace(merged);
+              return;
+            }
+          }catch(e){}
+        }
+        if(hasUrlFields)doReplace(fields);
+      };
+      xhr.onerror=function(){if(hasUrlFields)doReplace(fields);};
+      xhr.send();
+    }else if(hasUrlFields){
+      doReplace(fields);
+    }
+  }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',run);}
+  else{run();}
+})();
+</script>
+<script data-payment>
+(function(){
+  var slug='6cJVgdDN7';
+  var apiBase='https://app.macknified.com';
+  var successSubtext='';var successBtnLabel='Continue';var successBtnColor='#16a34a';var successRedirect='';
+  function findEmail(){
+    var ids=['email','emailAddress','buyer-email','buyerEmail','user-email','userEmail','checkout-email','customer-email','contact-email'];
+    for(var i=0;i<ids.length;i++){var el=document.getElementById(ids[i]);if(el&&el.value&&el.value.includes('@'))return el.value.trim();}
+    var inputs=document.querySelectorAll('input[type="email"],input[name*="email"],input[placeholder*="email"],input[placeholder*="Email"]');
+    for(var j=0;j<inputs.length;j++){if(inputs[j].value&&inputs[j].value.includes('@'))return inputs[j].value.trim();}
+    return '';
+  }
+  function findName(){
+    var ids=['name','fullName','full-name','buyer-name','buyerName','customer-name','userName','user-name'];
+    for(var i=0;i<ids.length;i++){var el=document.getElementById(ids[i]);if(el&&el.value)return el.value.trim();}
+    var inputs=document.querySelectorAll('input[name*="name"]:not([name*="email"]):not([type="email"]),input[placeholder*="name"]:not([placeholder*="email"]):not([type="email"]),input[placeholder*="Name"]:not([type="email"])');
+    for(var j=0;j<inputs.length;j++){if(inputs[j].value)return inputs[j].value.trim();}
+    return '';
+  }
+  function findPhone(){var ids=['phone','phoneNumber','phone-number','tel','telephone','mobile','mobileNumber','cell','contact-phone','buyer-phone'];for(var i=0;i<ids.length;i++){var el=document.getElementById(ids[i]);if(el&&el.value&&el.value.trim())return el.value.trim();}var inputs=document.querySelectorAll('input[type="tel"],input[name*="phone"],input[name*="tel"],input[name*="mobile"],input[placeholder*="phone"],input[placeholder*="Phone"]');for(var j=0;j<inputs.length;j++){if(inputs[j].value&&inputs[j].value.trim())return inputs[j].value.trim();}return '';}
+  var __realProcessPayment=function(a,b,c,d,e){
+    var amountCents,email,productName,productDescription,customerName,quantity;
+    if(a&&typeof a==='object'){
+      amountCents=a.amountCents;email=a.email;productName=a.productName;
+      productDescription=a.productDescription||'';customerName=a.name||'';quantity=a.quantity||1;
+    }else{
+      amountCents=typeof a==='number'?a:0;productName=typeof b==='string'?b:'';
+      productDescription=typeof c==='string'?c:'';email='';customerName='';quantity=1;
+    }
+    if(!email)email=findEmail();
+    if(!customerName)customerName=findName();
+    var phone=findPhone();
+    if(!productName){alert('Product name is required.');return Promise.reject('no_product_name');}
+    if(!amountCents||amountCents<100){alert('Amount must be at least $1.00');return Promise.reject('invalid_amount');}
+    if(!email){alert('Please enter your email address.');return Promise.reject('no_email');}
+    var successBase=window.location.href.split('?')[0];
+    var __pLoc=(document.documentElement.lang||navigator.language||'en');
+    return fetch(apiBase+'/api/landing-pages/public/'+slug+'/payment/checkout',{
+      method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({email:email,name:customerName,phone:phone||'',amountCents:amountCents,productName:productName,productDescription:productDescription,quantity:quantity,locale:__pLoc,successUrl:successBase+'?payment=success&product='+encodeURIComponent(productName)+'&session_id={CHECKOUT_SESSION_ID}',cancelUrl:successBase+'?payment=cancelled'})
+    }).then(function(r){return r.json();}).then(function(d){
+      if(d.checkoutUrl){window.location.href=d.checkoutUrl;}
+      else{alert(d.error||'Failed to process payment');throw new Error(d.error);}
+    });
+  };
+  Object.defineProperty(window,'__processPayment',{value:__realProcessPayment,writable:false,configurable:false});
+  document.addEventListener('DOMContentLoaded',function(){
+    var urlParams=new URLSearchParams(window.location.search);
+    if(urlParams.get('payment')==='success'){
+      var sidP=urlParams.get('session_id');
+      if(sidP){try{fetch(apiBase+'/api/landing-pages/public/'+slug+'/checkout/confirm',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({sessionId:sidP})}).catch(function(){});}catch(e){}}
+      var pName=urlParams.get('product')||'your item';
+      var overlay=document.createElement('div');overlay.id='payment-success-overlay';
+      overlay.style.cssText='position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.5);display:flex;align-items:center;justify-content:center;z-index:999999;font-family:system-ui,-apple-system,sans-serif;';
+      function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+      var subTxt=successSubtext||('Thank you for purchasing '+pName+'.');
+      overlay.innerHTML='<div style="background:white;border-radius:16px;padding:40px;max-width:420px;width:90%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.15);"><div style="width:64px;height:64px;border-radius:50%;background:#dcfce7;background:color-mix(in srgb,'+successBtnColor+' 12%,white);margin:0 auto 20px;display:flex;align-items:center;justify-content:center;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="'+successBtnColor+'" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><h2 style="margin:0 0 12px;font-size:24px;font-weight:700;color:#111827;">Payment Successful!</h2><p style="margin:0 0 24px;color:#6b7280;font-size:16px;">'+esc(subTxt)+'</p><button id="lp-pay-success-btn" style="padding:12px 32px;font-size:16px;font-weight:600;background:'+successBtnColor+';color:white;border:none;border-radius:8px;cursor:pointer;">'+esc(successBtnLabel)+'</button></div>';
+      document.body.appendChild(overlay);
+      var pBtn=document.getElementById('lp-pay-success-btn');
+      if(pBtn){pBtn.addEventListener('click',function(){if(successRedirect){window.location.href=successRedirect;}else{overlay.remove();window.history.replaceState({},'',window.location.pathname);}});}
+    }
+  });
+})();
+</script>
+<script data-cart>
+(function(){
+  var slug='6cJVgdDN7';
+  var apiBase='https://app.macknified.com';
+  var successSubtext='';var successBtnLabel='Continue';var successBtnColor='#16a34a';var successRedirect='';
+  function findCartEmail(){
+    var ids=['email','emailAddress','buyer-email','buyerEmail','user-email','userEmail','checkout-email','customer-email','contact-email'];
+    for(var i=0;i<ids.length;i++){var el=document.getElementById(ids[i]);if(el&&el.value&&el.value.includes('@'))return el.value.trim();}
+    var inputs=document.querySelectorAll('input[type="email"],input[name*="email"],input[placeholder*="email"],input[placeholder*="Email"]');
+    for(var j=0;j<inputs.length;j++){if(inputs[j].value&&inputs[j].value.includes('@'))return inputs[j].value.trim();}
+    return '';
+  }
+  function findCartName(){
+    var ids=['name','fullName','full-name','buyer-name','buyerName','customer-name','userName','user-name'];
+    for(var i=0;i<ids.length;i++){var el=document.getElementById(ids[i]);if(el&&el.value)return el.value.trim();}
+    var inputs=document.querySelectorAll('input[name*="name"]:not([name*="email"]):not([type="email"]),input[placeholder*="name"]:not([placeholder*="email"]):not([type="email"]),input[placeholder*="Name"]:not([type="email"])');
+    for(var j=0;j<inputs.length;j++){if(inputs[j].value)return inputs[j].value.trim();}
+    return '';
+  }
+  function findCartPhone(){var ids=['phone','phoneNumber','phone-number','tel','telephone','mobile','mobileNumber','cell','contact-phone','buyer-phone'];for(var i=0;i<ids.length;i++){var el=document.getElementById(ids[i]);if(el&&el.value&&el.value.trim())return el.value.trim();}var inputs=document.querySelectorAll('input[type="tel"],input[name*="phone"],input[name*="tel"],input[name*="mobile"],input[placeholder*="phone"],input[placeholder*="Phone"]');for(var j=0;j<inputs.length;j++){if(inputs[j].value&&inputs[j].value.trim())return inputs[j].value.trim();}return '';}
+  var __realCart=function(arg){
+    var items, email='', customerName='', successUrl, cancelUrl, currency;
+    if(Array.isArray(arg)){items=arg;}
+    else if(arg&&typeof arg==='object'){
+      items=arg.items;email=arg.email||'';customerName=arg.name||arg.customerName||'';
+      successUrl=arg.successUrl;cancelUrl=arg.cancelUrl;currency=arg.currency;
+    }
+    if(!Array.isArray(items)||items.length===0){alert('No items in cart.');return Promise.reject('no_items');}
+    var cleanItems=[];var totalCents=0;
+    for(var i=0;i<items.length;i++){
+      var it=items[i];if(!it||typeof it!=='object'){alert('Invalid item at position '+i);return Promise.reject('bad_item');}
+      var nm=typeof it.name==='string'?it.name.trim():'';
+      if(!nm){alert('Item '+(i+1)+' is missing a name.');return Promise.reject('no_name');}
+      var amt=typeof it.amountCents==='number'?it.amountCents:(typeof it.amount==='number'?Math.round(it.amount*100):NaN);
+      if(!isFinite(amt)||amt<1){alert('Item "'+nm+'" needs a valid amount in cents.');return Promise.reject('bad_amount');}
+      var qty=(typeof it.quantity==='number'&&it.quantity>0)?Math.floor(it.quantity):1;
+      cleanItems.push({name:nm,description:it.description||'',amountCents:amt,quantity:qty});
+      totalCents+=amt*qty;
+    }
+    if(totalCents<50){alert('Cart total must be at least $0.50');return Promise.reject('total_too_low');}
+    if(!email)email=findCartEmail();
+    if(!customerName)customerName=findCartName();
+    var cartPhone=findCartPhone();
+    if(!email){var p=window.prompt('Enter your email for the receipt:','');if(p&&p.indexOf('@')>-1){email=p.trim();}else{alert('An email address is required to complete checkout.');return Promise.reject('no_email');}}
+    var successBase=window.location.href.split('?')[0];
+    var body={email:email,name:customerName,items:cleanItems,locale:(document.documentElement.lang||navigator.language||'en')};
+    if(currency)body.currency=currency;
+    if(cartPhone)body.phone=cartPhone;
+    body.successUrl=successUrl||(successBase+'?cart=success&email='+encodeURIComponent(email)+'&session_id={CHECKOUT_SESSION_ID}');
+    body.cancelUrl=cancelUrl||(successBase+'?cart=cancelled');
+    return fetch(apiBase+'/api/landing-pages/public/'+slug+'/cart/checkout',{
+      method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify(body)
+    }).then(function(r){return r.json();}).then(function(d){
+      if(d.checkoutUrl){window.location.href=d.checkoutUrl;}
+      else{alert(d.error||'Failed to process checkout');throw new Error(d.error);}
+    });
+  };
+  try{Object.defineProperty(window,'__processCart',{value:__realCart,writable:false,configurable:false});}catch(e){window.__processCart=__realCart;}
+  document.addEventListener('DOMContentLoaded',function(){
+    var urlParams=new URLSearchParams(window.location.search);
+    if(urlParams.get('cart')==='success'){
+      var sidC=urlParams.get('session_id');
+      if(sidC){try{fetch(apiBase+'/api/landing-pages/public/'+slug+'/checkout/confirm',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({sessionId:sidC})}).catch(function(){});}catch(e){}}
+      if(document.getElementById('payment-success-overlay')||document.getElementById('donation-success-overlay')||document.getElementById('cart-success-overlay'))return;
+      var overlay=document.createElement('div');overlay.id='cart-success-overlay';
+      overlay.style.cssText='position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.5);display:flex;align-items:center;justify-content:center;z-index:999999;font-family:system-ui,-apple-system,sans-serif;';
+      function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+      var subTxt=successSubtext||'Thank you for your order.';
+      overlay.innerHTML='<div style="background:white;border-radius:16px;padding:40px;max-width:420px;width:90%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.15);"><div style="width:64px;height:64px;border-radius:50%;background:#dcfce7;background:color-mix(in srgb,'+successBtnColor+' 12%,white);margin:0 auto 20px;display:flex;align-items:center;justify-content:center;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="'+successBtnColor+'" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><h2 style="margin:0 0 12px;font-size:24px;font-weight:700;color:#111827;">Order Confirmed!</h2><p style="margin:0 0 24px;color:#6b7280;font-size:16px;">'+esc(subTxt)+'</p><button id="lp-cart-success-btn" style="padding:12px 32px;font-size:16px;font-weight:600;background:'+successBtnColor+';color:white;border:none;border-radius:8px;cursor:pointer;">'+esc(successBtnLabel)+'</button></div>';
+      document.body.appendChild(overlay);
+      var cBtn=document.getElementById('lp-cart-success-btn');
+      if(cBtn){cBtn.addEventListener('click',function(){if(successRedirect){window.location.href=successRedirect;}else{overlay.remove();window.history.replaceState({},'',window.location.pathname);}});}
+    }
+  });
+})();
+</script>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/png" href="https://tipwheelz.com/assets/wheelz-mark-20261101.png"><link rel="apple-touch-icon" href="https://tipwheelz.com/assets/wheelz-mark-20261101.png"></head><body><a class="skip-link" href="#main-content">Skip to main content</a><header class="top wrap"><a class="brand" href="https://manthey1-crypto.github.io/tipwheelz-mack-preview/" aria-label="TipWheelz home">TIP<span>WHEELZ</span></a><nav aria-label="Site"><a href="https://manthey1-crypto.github.io/tipwheelz-mack-preview/">Support</a><a href="https://manthey1-crypto.github.io/tipwheelz-mack-preview/wall/">Wall of Thanks</a><a href="https://manthey1-crypto.github.io/tipwheelz-mack-preview/privacy/" aria-current="page">Privacy</a><a href="https://manthey1-crypto.github.io/tipwheelz-mack-preview/terms/" >Terms</a></nav></header><main id="main-content" tabindex="-1" class="wrap"><aside class="side" aria-label="On this page"><strong>On this page</strong><a href="#overview">Who runs this site</a><a href="#collect">What we collect</a><a href="#use">How we use it</a><a href="#wall">Wall of Thanks</a><a href="#fulfillment">Merchandise fulfillment</a><a href="#share">Service providers and disclosure</a><a href="#support-chat">AI support chat</a><a href="#cookies">Cookies and privacy choices</a><a href="#choices">Your choices</a><a href="#retention">Retention and security</a><a href="#children">Children and other sites</a><a href="#changes">Changes and contact</a></aside><article><p class="eyebrow">TipWheelz / the details</p><h1>Privacy <span>Policy</span></h1><p class="lede">How TipWheelz handles supporter details, payments, and names on the Wall of Thanks.</p><p class="date">Updated November 1, 2026</p><section id="overview"><h2>Who runs this site</h2><p>TipWheelz supports Mr Wheelz’s comedy and accessibility work. For questions about this policy or your information, email <a href="mailto:info@rollflow.net">info@rollflow.net</a>. This notice covers the TipWheelz site, its support and merchandise checkouts, and the Wall of Thanks.</p></section><section id="collect"><h2>What we collect</h2><ul><li><strong>Support and contact details:</strong> the email address you enter, an optional name and private note, your chosen one-time or monthly amount, and whether you opted in to the public Wall of Thanks.</li><li><strong>Merchandise and delivery details:</strong> the recipient’s name, shipping address, checkout email, optional phone number, selected products, sizes, colors, quantities, order number, shipping charges, tax, order and fulfillment status, and delivery or tracking details when available. If you report a problem, we also receive your correspondence and any product or packaging photos you send.</li><li><strong>Transaction details:</strong> payment and subscription status, Stripe transaction identifiers, charge amount, dates, refunds, and billing support records. Stripe collects and handles payment card details through its payment interface; TipWheelz does not store your full card number.</li><li><strong>Technical details:</strong> our hosting and security services may process IP address, device/browser information, and request logs. The checkout uses a daily, salted hash derived from an IP address to limit abuse.</li><li><strong>On your device:</strong> necessary browser storage remembers your privacy choice. Merchandise checkout also uses necessary session storage to keep an order reference and an access token so this browser can retrieve its order status. Treat that token as private. Older versions may also have saved a signed billing-management token. Current monthly billing management uses Stripe’s email-verified login and does not require that old token. Payment providers may use cookies or similar technologies for payment security. See the cookie notice below.</li></ul></section><section id="use"><h2>How we use it</h2><p>We use this information to complete and verify support payments and merchandise purchases, calculate shipping and tax, arrange production and delivery, manage cancellations, replacements and refunds, send order confirmations and tracking-related communications, manage monthly billing, send monthly welcome and billing-management emails, send or assist with receipts, answer questions, prevent abuse, keep financial records, and operate the Wall of Thanks. We do not use your private note as a public wall entry.</p></section><section id="wall"><h2>Wall of Thanks</h2><div class="callout"><p>Only a chosen public name appears on the Wall of Thanks. Email addresses, notes, and amounts are not shown there.</p></div><p>The name appears only when you opt in, the payment is verified, and an admin approves the entry. You can ask us to edit or remove your name at <a href="mailto:info@rollflow.net?subject=Wall%20of%20Thanks%20request">info@rollflow.net</a>. Removal from our page may not erase copies or screenshots others already made.</p></section><section id="fulfillment"><h2>Merchandise fulfillment and order support</h2><p>For merchandise purchases, we share the details needed to quote delivery and fulfill the order with Printify, the print provider handling the item, and shipping carriers. These details can include the recipient’s name, address, email, optional phone number, ordered products and variants, quantities, and order references. They use this information to make and deliver products, send tracking updates, and investigate delivery or product problems. We may share relevant issue descriptions and photos with the fulfillment provider to assess a reprint or refund.</p><p>Stripe receives the shipping and transaction details needed to process the payment and calculate applicable tax. Full card details are handled by Stripe and are not sent by TipWheelz to Printify. See <a href="https://printify.com/privacy-policy/" target="_blank" rel="noopener noreferrer">Printify’s privacy policy</a> for its handling of order information. We keep private order records and use service providers for transactional email and order reporting; purchase details and shipping addresses are not displayed on the public Wall of Thanks.</p></section><section id="share"><h2>Service providers and disclosure</h2><p>We use service providers for payment processing, order fulfillment and shipping, transactional email, private order reporting, website hosting, security, and site operations. Depending on their role, payment providers handle transaction and contact details, while hosting and security providers may process technical request data and checkout records. Stripe processes card payments and subscriptions. See <a href="https://stripe.com/privacy" target="_blank" rel="noopener noreferrer" aria-label="Stripe’s privacy policy (opens in a new tab)">Stripe’s privacy policy</a> for its handling of payment information.</p><p>We may also disclose information when required by law, or to investigate fraud or payment disputes. We do not publish supporter payment amounts or sell supporter information.</p></section><section id="support-chat"><h2>Optional AI support chat</h2><p>Opening <strong>Help &amp; orders</strong> loads our hosted AI support assistant. It receives the messages and order-help details you choose to provide, such as your reply email, order reference, purchase channel and issue description. The chat service also receives technical connection information and may use storage needed to maintain the conversation. It does not load through this help button until you open it.</p><p>We and our service providers process conversations and confirmed requests to answer questions, maintain support records and route requests to a human. AI replies can be mistaken. The assistant cannot verify ownership, view private order records, cancel an order, stop production or issue a refund. A human checks ownership, payment and fulfillment details before deciding what action is possible. A submitted request does not pause production or renewals.</p><p>Do not send card numbers, passwords, login codes, government identifiers or private payment links. Chat uploads are disabled; send relevant product photos by email when requested. Chat is optional: contact <a href="mailto:info@rollflow.net">info@rollflow.net</a> instead. We keep support conversations and requests only as reasonably needed for support, disputes, security and legal obligations. You can ask about access, correction or deletion at that address, subject to applicable retention requirements. Support requests do not enroll you in marketing.</p></section><section id="cookies"><h2>Cookies and privacy choices</h2>
+<p>This site's pages do not install optional analytics scripts, advertising pixels, or cross-site advertising trackers. We do not sell supporter information or share it for cross-context behavioral advertising. Necessary payment, security, and preference storage remain available when you reject optional cookies.</p>
+<p>Use <strong>Cookie &amp; privacy settings</strong> at the bottom of any public page to reject optional cookies or review the current categories. There is no optional tracking to accept in the current version. You do not need an account, and rejecting optional cookies does not prevent a payment or change your Wall of Thanks choice.</p>
+<p>We save your rejection in this browser's local storage under <code>tipwheelz_privacy_v1</code> for 180 days. It contains the off settings and the time saved, not your name or email. It is specific to this browser and website address. Clearing browser data removes it; if storage is blocked, optional tracking still stays off but we may show the notice again.</p>
+<p>When your browser sends Global Privacy Control through its supported browser setting, we recognize it automatically and display confirmation in the privacy settings and footer. Optional tracking remains off. This page control applies to this site's pages, not to an external website after you follow a link.</p>
+<p>Stripe's payment library loads when you continue into secure checkout. Stripe may use cookies or similar technologies for payment security and fraud prevention. These necessary payment functions are not optional analytics or advertising. See <a href="https://stripe.com/legal/cookies-policy" target="_blank" rel="noopener noreferrer">Stripe's cookie policy</a>.</p>
+<p>External fonts and images may contact their providers and disclose technical information such as an IP address even without setting a cookie. Social links, external marketplace checkouts, and Stripe’s billing portal lead to services with their own privacy practices.</p></section><section id="choices"><h2>Your choices</h2><p>Your Wall of Thanks opt-in is optional and can be withdrawn by email. You may request access, correction, or deletion of information we hold by writing to <a href="mailto:info@rollflow.net">info@rollflow.net</a>. We may need to verify your request and retain some records for payment, accounting, fraud prevention, or legal obligations. You can cancel monthly support using “Manage monthly support” on the checkout page using the same email address you subscribed with, on any device, or contact us if you cannot access it. Some payment information may also be managed directly with Stripe. A privacy or deletion request does not itself cancel a paid order or stop production. For merchandise cancellations, contact us promptly with your order number and see the <a href="https://tipwheelz.com/terms/#merchandise-cancellations">cancellation and returns policy</a>. Some order records may need to be retained to complete a transaction or meet legal obligations.</p></section><section id="retention"><h2>Retention and security</h2><p>We keep information for as long as reasonably needed to run support payments, fulfill merchandise orders, manage returns, refunds and disputes, keep required financial and tax records, and protect the service. The period depends on the type of record and applicable obligations. We use access controls and payment processing services designed to protect information, but no online service can guarantee absolute security.</p></section><section id="children"><h2>Children and other sites</h2><p>TipWheelz is not intended for children under 13, and we do not knowingly collect their personal information. Links to social media and other sites have their own privacy practices.</p></section><section id="changes"><h2>Changes and contact</h2><p>We may update this policy as the site changes. The effective date above shows when this version took effect. For privacy questions or requests, email <a href="mailto:info@rollflow.net">info@rollflow.net</a>.</p></section></article></main><footer><div class="wrap">TipWheelz · <a href="https://manthey1-crypto.github.io/tipwheelz-mack-preview/">Home</a><a href="https://manthey1-crypto.github.io/tipwheelz-mack-preview/privacy/">Privacy Policy</a><a href="https://manthey1-crypto.github.io/tipwheelz-mack-preview/terms/">Terms of Service</a><a href="mailto:info@rollflow.net">info@rollflow.net</a></div></footer><!-- TW-PRIVACY-START --><style data-tipwheelz-privacy>#tw-cookie-notice,#tw-cookie-settings,.tw-cookie-footer{font-family:Inter,Arial,sans-serif;font-size:16px;line-height:1.5;color:#f1f5f4;box-sizing:border-box}
+#tw-cookie-notice[hidden],#tw-cookie-gpc[hidden]{display:none!important}
+#tw-cookie-notice{position:fixed;inset:auto 16px 16px auto;z-index:9999;width:min(540px,calc(100% - 32px));max-height:50dvh;overflow:auto;padding:20px;background:#1b2126;border:1px solid #4fbba4;border-radius:12px;box-shadow:0 8px 32px #0008}
+#tw-cookie-notice h2,#tw-cookie-settings h2{font:700 1.15rem/1.3 Inter,Arial,sans-serif;letter-spacing:normal;text-transform:none;margin:0 0 10px;color:#f1f5f4}
+#tw-cookie-notice p,#tw-cookie-settings p{font-size:.9rem;margin:0 0 12px;color:#c2ceca}
+#tw-cookie-notice a,#tw-cookie-settings a{color:#79dbc5;text-decoration:underline;text-underline-offset:3px}
+.tw-cookie-actions{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0}
+.tw-cookie-actions button,.tw-cookie-footer button{font:600 .9rem/1.4 Inter,Arial,sans-serif;min-height:44px;border:1px solid #79dbc5;border-radius:7px;background:#1b2126;color:#f1f5f4;padding:10px 14px;cursor:pointer}
+.tw-cookie-actions button:hover,.tw-cookie-footer button:hover{background:#293731}
+.tw-cookie-actions button:focus-visible,.tw-cookie-footer button:focus-visible,#tw-cookie-settings a:focus-visible,#tw-cookie-notice a:focus-visible{outline:3px solid #fff275;outline-offset:3px}
+#tw-cookie-settings{width:min(580px,calc(100% - 24px));max-height:calc(100dvh - 24px);overflow:auto;padding:24px;background:#1b2126;border:1px solid #4fbba4;border-radius:12px;margin:auto}
+#tw-cookie-settings::backdrop{background:#000b}
+#tw-cookie-settings dt{font-weight:700;margin-top:18px;color:#f1f5f4}
+#tw-cookie-settings dt span{display:block;font-size:.85rem;font-weight:500;color:#79dbc5}
+#tw-cookie-settings dd{margin:6px 0 0;font-size:.9rem;color:#c2ceca}
+#tw-cookie-saved:empty{display:none}
+.tw-cookie-footer{padding:12px 20px 24px;margin:0;background:#111418;text-align:center}
+.tw-cookie-footer button{background:transparent;text-decoration:underline;border-color:transparent}
+#tw-cookie-footer-status{display:block;font-size:.8rem;color:#c2ceca}
+@media(max-width:480px){#tw-cookie-notice{inset:auto 12px 12px;width:calc(100% - 24px);padding:16px}.tw-cookie-actions button{flex:1 1 130px}#tw-cookie-settings{padding:20px}}
+</style><section id="tw-cookie-notice" aria-labelledby="tw-cookie-title" hidden>
+  <h2 id="tw-cookie-title">Cookies &amp; your privacy</h2>
+  <p>This site uses necessary storage for your privacy choice and secure checkout. No optional analytics or advertising cookies are enabled.</p>
+  <p id="tw-cookie-gpc" hidden>Global Privacy Control detected. Your opt-out is honored.</p>
+  <div class="tw-cookie-actions"><button type="button" data-tw-reject>Reject optional cookies</button><button type="button" data-tw-settings>Settings</button></div>
+  <a href="https://tipwheelz.com/privacy/#cookies">Read the cookie notice</a>
+</section>
+<dialog id="tw-cookie-settings" aria-labelledby="tw-cookie-settings-title" aria-describedby="tw-cookie-settings-intro">
+  <h2 id="tw-cookie-settings-title">Cookie &amp; privacy settings</h2>
+  <p id="tw-cookie-settings-intro">Optional tracking is off. You can use the site and support Mr Wheelz without accepting optional cookies.</p>
+  <dl><dt>Necessary storage <span>Always active</span></dt><dd>Remembers your privacy choice. Stripe may use cookies and similar technologies for payment security when you start checkout. These payment functions cannot be turned off here.</dd><dt>Analytics cookies <span>Not used</span></dt><dd>No optional analytics scripts are installed in this site's pages.</dd><dt>Advertising cookies <span>Not used</span></dt><dd>No advertising pixels or cross-site advertising trackers are installed in this site's pages.</dd></dl>
+  <p id="tw-cookie-signal"></p><p id="tw-cookie-saved" role="status" aria-live="polite"></p>
+  <p>External fonts and images still make requests to their providers. Links to Stripe billing and social or shopping sites open services with their own privacy settings.</p>
+  <p><a href="https://tipwheelz.com/privacy/#cookies">Privacy and cookie notice</a> · <a href="mailto:info@rollflow.net">Contact us</a></p>
+  <div class="tw-cookie-actions"><button type="button" data-tw-reject>Reject optional cookies</button><button type="button" data-tw-close>Close</button></div>
+</dialog>
+<p class="tw-cookie-footer"><button type="button" data-tw-settings>Cookie &amp; privacy settings</button><span id="tw-cookie-footer-status"></span></p>
+<script data-tipwheelz-privacy>/* TipWheelz currently installs no optional analytics or advertising scripts.
+   This records a local opt-out, never an opt-in. New integrations require a
+   separate audit and consent gate; this code is not an arbitrary-script blocker. */
+(() => {
+  'use strict';
+  const key='tipwheelz_privacy_v1', lifetime=180*24*60*60*1000;
+  const notice=document.getElementById('tw-cookie-notice');
+  const dialog=document.getElementById('tw-cookie-settings');
+  if(!notice || !dialog) return;
+  let lastFocus=null;
+  const gpc=()=>navigator.globalPrivacyControl===true;
+  function readChoice(){
+    try {
+      const value=JSON.parse(localStorage.getItem(key));
+      return value?.version===1 && value.analytics===false && value.advertising===false &&
+        typeof value.savedAt==='number' && value.savedAt<=Date.now() && Date.now()-value.savedAt<lifetime ? value : null;
+    } catch {return null;}
+  }
+  function update(){
+    notice.hidden=Boolean(readChoice()) || gpc();
+    document.getElementById('tw-cookie-gpc').hidden=!gpc();
+    document.getElementById('tw-cookie-signal').textContent=gpc()
+      ? 'Global Privacy Control is on. Your opt-out is honored; optional tracking remains off.'
+      : 'Optional analytics and advertising remain off, including before you make a choice.';
+    document.getElementById('tw-cookie-footer-status').textContent=gpc()
+      ? 'Global Privacy Control honored · Optional tracking off'
+      : readChoice() ? 'Optional cookies rejected' : '';
+  }
+  function reject(){
+    let saved=false;
+    try {
+      localStorage.setItem(key,JSON.stringify({version:1,analytics:false,advertising:false,saleOrSharing:false,savedAt:Date.now()}));
+      saved=true;
+    } catch {}
+    notice.hidden=true;
+    document.getElementById('tw-cookie-saved').textContent=saved
+      ? 'Your choice is saved for 180 days in this browser. Optional tracking is off.'
+      : 'Optional tracking is off. Your browser prevented saving the choice, so this notice may appear again.';
+    document.getElementById('tw-cookie-footer-status').textContent=gpc()
+      ? 'Global Privacy Control honored · Optional tracking off'
+      : saved ? 'Optional cookies rejected' : 'Optional tracking off · Choice could not be saved';
+    window.dispatchEvent(new CustomEvent('tipwheelz:privacychange',{detail:{analytics:false,advertising:false,saleOrSharing:false,globalPrivacyControl:gpc()}}));
+    if(dialog.open) dialog.close();
+    else document.querySelector('.tw-cookie-footer [data-tw-settings]').focus({preventScroll:true});
+  }
+  document.querySelectorAll('[data-tw-reject]').forEach(button=>button.addEventListener('click',reject));
+  document.querySelectorAll('[data-tw-settings]').forEach(button=>button.addEventListener('click',()=>{
+    lastFocus=button;
+    update();
+    document.getElementById('tw-cookie-saved').textContent='';
+    if(!dialog.open) dialog.showModal();
+  }));
+  document.querySelector('[data-tw-close]').addEventListener('click',()=>dialog.close());
+  dialog.addEventListener('close',()=>{
+    const target=lastFocus?.isConnected && !lastFocus.closest('[hidden]') ? lastFocus : document.querySelector('.tw-cookie-footer [data-tw-settings]');
+    target.focus({preventScroll:true});
+  });
+  window.addEventListener('storage',event=>{if(event.key===key || event.key===null)update();});
+  window.addEventListener('pageshow',update);
+  update();
+})();
+</script><!-- TW-PRIVACY-END --><!-- TW-SUPPORT-CHAT-START -->
+
+<button type="button" class="tw-help-launch" id="tw-help-launch" aria-label="Help and orders: open TipWheelz AI assistant" title="Help &amp; orders" aria-haspopup="dialog" aria-controls="tw-help-dialog"><img src="https://tipwheelz.com/assets/wheelz-mark-20261101.png" width="64" height="64" alt=""></button>
+<dialog id="tw-help-dialog" aria-labelledby="tw-help-title">
+<div class="tw-help-shell"><div class="tw-help-bar"><h2 id="tw-help-title">TipWheelz AI help</h2><button type="button" class="tw-help-close" id="tw-help-close" autofocus>Close</button></div>
+<p class="tw-help-note">For spoken help, choose “Turn on voice mode” in the chat and allow microphone access when asked. Quick answers. Cancellations and refunds need human review. Urgent? <a href="mailto:info@rollflow.net">Email Mr Wheelz</a>. <a href="https://tipwheelz.com/privacy/#support-chat" target="_blank" rel="noopener noreferrer">Chat privacy</a>. No card details or passwords.</p>
+<iframe allow="microphone" id="tw-help-frame" title="TipWheelz AI support conversation" referrerpolicy="no-referrer"></iframe>
+</div></dialog>
+<script>
+(function(){'use strict';const launch=document.getElementById('tw-help-launch'),dialog=document.getElementById('tw-help-dialog'),frame=document.getElementById('tw-help-frame'),close=document.getElementById('tw-help-close');if(!launch||!dialog||!frame)return;let previous;
+launch.addEventListener('click',function(){previous=document.activeElement;if(!frame.hasAttribute('src'))frame.src='https://app.macknified.com/agents/10994063/embed';if(!dialog.open)dialog.showModal();close.focus();});
+close.addEventListener('click',function(){dialog.close();});
+dialog.addEventListener('close',function(){frame.removeAttribute('src');if(previous&&previous.isConnected)previous.focus();else launch.focus();});
+function placement(){const notice=document.getElementById('tw-cookie-notice');const visible=notice&&!notice.hidden&&notice.getBoundingClientRect().height>0;launch.hidden=!!visible;const other=Array.from(document.querySelectorAll('dialog[open]')).some(function(d){return d!==dialog;});if(other)launch.hidden=true;}
+const notice=document.getElementById('tw-cookie-notice');if(notice)new MutationObserver(placement).observe(notice,{attributes:true,attributeFilter:['hidden','style','class']});document.querySelectorAll('dialog').forEach(function(d){if(d!==dialog)new MutationObserver(placement).observe(d,{attributes:true,attributeFilter:['open']});});placement();
+})();
+</script><!-- TW-SUPPORT-CHAT-END --><style id="tw-help-icon-style">button.tw-help-launch#tw-help-launch{width:64px;height:64px;min-height:64px;padding:0;border:1px solid #4fbba4;border-radius:50%;background:#111418;display:grid;place-items:center;overflow:hidden}button.tw-help-launch#tw-help-launch[hidden]{display:none}#tw-help-launch img{display:block;width:64px;height:64px;max-width:none;object-fit:contain;pointer-events:none}@media(max-width:480px){button.tw-help-launch#tw-help-launch{width:56px;height:56px;min-height:56px}#tw-help-launch img{width:56px;height:56px}}</style><style id="tw-help-bounce-style">
+@keyframes tw-help-bounce{0%,76%,88%,100%{transform:translateY(0)}82%{transform:translateY(-4px)}94%{transform:translateY(-2px)}}
+button.tw-help-launch#tw-help-launch{animation:tw-help-bounce 6s ease-in-out infinite}
+button.tw-help-launch#tw-help-launch:hover,button.tw-help-launch#tw-help-launch:focus-visible{animation-play-state:paused}
+@media(prefers-reduced-motion:reduce){button.tw-help-launch#tw-help-launch{animation:none!important;transform:none!important}}
+</style></body></html>
